@@ -50,6 +50,14 @@ return true if c is null, false otherwise
 */
 function isNull(c) {
   //your code here
+  //console.log(c);
+  //console.log(typeof c);
+  if(c === null){
+    return true;
+  }
+  else{
+    return false;
+  }
   return undefined;
   //end your code
 }
