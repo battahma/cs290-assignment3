@@ -91,10 +91,11 @@ function parseGit(res){
 		hash = str[0];
 		str = res[i].split("\"")
 		message = str[1];
-		str = res.slice(0,hash.length);
-		str = str.slice(0, (-1)*message.length);
+		str = res[i];
+		str = str.slice(hash.length);
+		str = str.split("\"");
 		
-		Log[i]= new GitLog(hash, Date.parse(str), message);
+		Log[i]= new GitLog(hash, new Date(str[0]), message);
 	}
 	
 	return Log;
